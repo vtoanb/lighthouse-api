@@ -4,7 +4,7 @@ class LighthouseApi < Sinatra::Base
   set :bind, '0.0.0.0'
 
   get '/' do
-    uri = URI.parse(request.params['url'])
+    uri = URI.parse(request.params['url']) rescue ''
 
     case
     when URI::HTTP === uri
